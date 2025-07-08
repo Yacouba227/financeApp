@@ -1,5 +1,5 @@
 import 'package:financeapp/data/one.dart';
-import 'package:financeapp/data/listdata.dart';
+//import 'package:financeapp/data/listdata.dart';
 
 List<money> geter() {
   money upwork = money();

@@ -21,7 +21,7 @@ class _ChartState extends State<Chart> {
         series: <SplineSeries<SalesData, String>>[
           SplineSeries<SalesData, String>(
             color: Color.fromARGB(255, 47, 125, 121),
-            width: 2,
+            width: 3,
             dataSource: <SalesData>[
               SalesData(100, 'Mom'),
               SalesData(20, 'Tue'),

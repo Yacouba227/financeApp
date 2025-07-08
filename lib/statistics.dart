@@ -1,5 +1,6 @@
 import 'dart:ffi';
 
+import 'package:financeapp/data/top.dart';
 import 'package:financeapp/widgets/chart.dart';
 import 'package:flutter/material.dart';
 
@@ -108,11 +109,45 @@ class _StatisticsState extends State<Statistics> {
                   SizedBox(height: 20),
                   Chart(),
                   SizedBox(height: 20),
-                  Row(
-                    //57:33
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 15),
+                    child: Row(
+                      //57:33
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "Top Spending",
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 18,
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
+                        Icon(Icons.swap_vert, color: Colors.grey, size: 25),
+                      ],
+                    ),
                   ),
                 ],
               ),
+            ),
+            SliverList(
+              delegate: SliverChildBuilderDelegate((context, index) {
+                return ListTile(
+                  leading: Image.asset(
+                    'assets/${geter_top()[index].image!}',
+                    width: 50,
+                    height: 50,
+                  ),
+                  title: Text(
+                    geter_top()[index].name!,
+                    style: TextStyle(fontSize: 17, fontWeight: FontWeight.w600),
+                  ),
+                  subtitle: Text(
+                    geter_top()[index].time!,
+                    style: TextStyle(fontWeight: FontWeight.w600),
+                  ),
+                );
+              }, childCount: geter_top().length),
             ),
           ],
         ),
