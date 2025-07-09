@@ -134,7 +134,7 @@ class _StatisticsState extends State<Statistics> {
               delegate: SliverChildBuilderDelegate((context, index) {
                 return ListTile(
                   leading: Image.asset(
-                    'assets/${geter_top()[index].image!}',
+                    geter_top()[index].image!,
                     width: 50,
                     height: 50,
                   ),
@@ -145,6 +145,14 @@ class _StatisticsState extends State<Statistics> {
                   subtitle: Text(
                     geter_top()[index].time!,
                     style: TextStyle(fontWeight: FontWeight.w600),
+                  ),
+                  trailing: Text(
+                    geter_top()[index].fee!,
+                    style: TextStyle(
+                      color: Colors.red,
+                      fontSize: 19,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 );
               }, childCount: geter_top().length),

@@ -6,21 +6,21 @@ List<money> geter() {
   upwork.name = "upwork";
   upwork.fee = "650";
   upwork.time = "Today";
-  upwork.image = "assets/cart.png";
+  upwork.image = 'assets/images/cart.png';
   upwork.buy = false;
 
   money starbucks = money();
   starbucks.name = "Starbucks";
   starbucks.fee = "5.50";
   starbucks.time = "Today";
-  starbucks.image = "assets/code.png";
+  starbucks.image = 'assets/images/code.png';
   starbucks.buy = true;
 
   money trasfer = money();
   trasfer.name = "Transfer from yac";
   trasfer.fee = "100";
   trasfer.time = "jan 30.2022";
-  trasfer.image = "assets/computer.png";
+  trasfer.image = 'assets/images/computer.png';
   trasfer.buy = false;
 
   return [
@@ -33,5 +33,6 @@ List<money> geter() {
     trasfer,
     starbucks,
     upwork,
-    trasfer,];
+    trasfer,
+  ];
 }
