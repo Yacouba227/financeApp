@@ -1,6 +1,8 @@
 import 'dart:math';
 
+import 'package:financeapp/data/model/add_date.dart';
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
 
 class Add extends StatefulWidget {
   const Add({super.key});
@@ -10,6 +12,7 @@ class Add extends StatefulWidget {
 }
 
 class _AddState extends State<Add> {
+  final box = Hive.box<Add_data>('data');
   DateTime date = DateTime.now();
   String? selectedItem;
   String? selectedItemi;
@@ -83,6 +86,11 @@ class _AddState extends State<Add> {
 
   GestureDetector save() {
     return GestureDetector(
+      onTap: () {
+        var add = Add_data(selectedItemi!, amount_c.text, date as String, expalin_C.text, selectedItem as DateTime);
+        box.add(add);
+        Navigator.of(context).pop();
+      },
       child: Container(
         alignment: Alignment.center,
         width: 100,
